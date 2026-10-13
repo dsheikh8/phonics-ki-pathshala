@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #FFF9F5;
+    color: #1E112A;
+    font-family: 'Outfit', 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka', 'Quicksand', cursive, sans-serif;
+  }
+}
+
+/* Custom Keyframe Animations */
+@keyframes wiggleSlow {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+@keyframes pulseGlowSlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 138, 0, 0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(255, 138, 0, 0); }
+}
+
+.animate-wiggle {
+  animation: wiggleSlow 0.4s ease-in-out;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlowSlow 2.5s infinite;
+}
+
+/* Custom Utilities */
+.btn-primary-orange {
+  @apply bg-gradient-to-r from-[#FF8A00] to-[#E07900] text-white font-heading font-bold px-6 py-3 rounded-full shadow-orange hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 inline-flex items-center justify-center gap-2;
+}
+
+.btn-secondary-purple {
+  @apply bg-brand-purple text-white font-heading font-bold px-6 py-3 rounded-full shadow-brand hover:bg-brand-purpleDark hover:-translate-y-0.5 transition-all duration-200 inline-flex items-center justify-center gap-2;
+}
+
+.btn-whatsapp-green {
+  @apply bg-emerald-500 hover:bg-emerald-600 text-white font-heading font-bold px-6 py-3 rounded-full shadow-md hover:-translate-y-0.5 transition-all duration-200 inline-flex items-center justify-center gap-2;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF9F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFD54F;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF8A00;
+}
